@@ -29,12 +29,12 @@
 	text-align: center;
 	font-size: 16px;
 	cursor: pointer;
-	
+
 }
 .btn:hover{
 	background-color:#b0dbb3;
-} 
-  
+}
+
 .navbar input[type=text] {
   float: right;
   padding: 6px;
@@ -43,21 +43,21 @@
   border: 2px solid #ddd;
   font-size: 16px;
 }
-  
-  
+
+
   </style>
 </head>
 
 <body>
 
 <div class="navbar">
-	
-  <a href="file:///D:/web/login.html">lOGOUT</a>
+
+  <a href="javascript:logout();">lOGOUT</a>
   <a href="#news">ABS LIST</a>
-  
+
   <button class="btn" >
 	<i class="fa fa-bell" aria-hidden="true"></i></button>
-		
+
    <input type="text" placeholder="Search.." id="myInput" onkeyup="myFunction()">
 </div>
 <img src="kiit_logo.jpg" alt="kiit logo">
@@ -66,15 +66,15 @@
 <table border="1" align="center" width="70%" cellpadding="5" cellspacing="3">
 <thead>
  <tr><th colspan="5">KIIT UNIVERSITY</th><tr>
-</thead> 
+</thead>
  <tr>
 	<th>NAME</th>
 	<th>ROLL</th>
 	<th>PHONE NO.</th>
 	<th>LIBRARY</th>
 	<th>ATENDENCE</th>
-	
- 
+
+
  </tr>
  <tr>
 	<td>Pradhumn</td>
@@ -85,9 +85,9 @@
       <option value="$">--Please Select--</option>
       <option value="val1">returned</option>
       <option value="val2">not returned</option>
-</select></td>	
+</select></td>
  </tr>
- 
+
   <tr>
 	<td>Aditi</td>
 	<td>1705478</td>
@@ -97,9 +97,9 @@
       <option value="$">--Please Select--</option>
       <option value="val1">returned</option>
       <option value="val2">not returned</option>
-</select></td>	
+</select></td>
  </tr>
- 
+
   <tr>
 	<td>Roli</td>
 	<td>1705530</td>
@@ -109,33 +109,26 @@
       <option value="$">--Please Select--</option>
       <option value="val1">returned</option>
       <option value="val2">not returned</option>
-</select></td>	
+</select></td>
  </tr
 
 </table>
 </div>
-
+<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>
 <script>
-function myFunction() {
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[1];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }       
-  }
-}
+  // Initialize Firebase
+  var firebaseConfig = {
+    apiKey: "AIzaSyB8UPc_EUxpwB1BSIQO1ejIWv6GKoIqtec",
+    authDomain: "librarypass-540bb.firebaseapp.com",
+    databaseURL: "https://librarypass-540bb.firebaseio.com",
+    projectId: "librarypass-540bb",
+    storageBucket: "librarypass-540bb.appspot.com",
+    messagingSenderId: "91832592128",
+    appId: "1:91832592128:web:01497ac2af82d6081a75e5"
+  };
+firebase.initializeApp(firebaseConfig);
 </script>
-
-
-
+  <script src="hostelAuth.js"></script>
 </body>

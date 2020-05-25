@@ -29,12 +29,12 @@
 	text-align: center;
 	font-size: 16px;
 	cursor: pointer;
-	
+
 }
 .btn:hover{
 	background-color:#b0dbb3;
-} 
-  
+}
+
 .navbar input[type=text] {
   float: right;
   padding: 6px;
@@ -43,21 +43,21 @@
   border: 2px solid #ddd;
   font-size: 16px;
 }
-  
-  
+
+
   </style>
 </head>
 
 <body>
 
 <div class="navbar">
-	
+
   <a href="file:///D:/web/login.html">lOGOUT</a>
   <a href="#news">ABS LIST</a>
-  
+
   <button class="btn" >
 	<i class="fa fa-bell" aria-hidden="true"></i></button>
-		
+
    <input type="text" placeholder="Search.." id="myInput" onkeyup="myFunction()">
 </div>
 <img src="kiit_logo.jpg" alt="kiit logo">
@@ -66,7 +66,7 @@
 <table border="1" align="center" width="70%" cellpadding="5" cellspacing="3">
 <thead>
  <tr><th colspan="6">KIIT UNIVERSITY</th><tr>
-</thead> 
+</thead>
  <tr>
 	<th>NAME</th>
 	<th>ROLL</th>
@@ -74,8 +74,8 @@
 	<th>THINGS</th>
 	<th>ATENDENCE</th>
 	<th>LEFT</th>
-	
- 
+
+
  </tr>
  <tr>
 	<td>Pradhumn</td>
@@ -88,9 +88,9 @@
       <option value="val2">Absent</option>
       <option value="val3">Canceled</option>
 </select></td>
-	<td><input type="checkbox" />    &nbsp;   </td>	
+	<td><input type="checkbox" />    &nbsp;   </td>
  </tr>
- 
+
   <tr>
 	<td>Aditi</td>
 	<td>1705478</td>
@@ -101,10 +101,10 @@
       <option value="val1">Present</option>
       <option value="val2">Absent</option>
       <option value="val3">Canceled</option>
-</select></td>	
+</select></td>
 	<td><input type="checkbox" />    &nbsp;   </td>
  </tr>
- 
+
   <tr>
 	<td>Roli</td>
 	<td>1705530</td>
@@ -115,12 +115,12 @@
       <option value="val1">Present</option>
       <option value="val2">Absent</option>
       <option value="val3">Canceled</option>
-</select></td>	
+</select></td>
 	<td><input type="checkbox" />    </td>
  </tr
- 
 
- 
+
+
 
 
 </table>
@@ -142,11 +142,27 @@ function myFunction() {
       } else {
         tr[i].style.display = "none";
       }
-    }       
+    }
   }
 }
 </script>
 
-
-
+<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>
+<script>
+  // Initialize Firebase
+  var firebaseConfig = {
+    apiKey: "AIzaSyB8UPc_EUxpwB1BSIQO1ejIWv6GKoIqtec",
+    authDomain: "librarypass-540bb.firebaseapp.com",
+    databaseURL: "https://librarypass-540bb.firebaseio.com",
+    projectId: "librarypass-540bb",
+    storageBucket: "librarypass-540bb.appspot.com",
+    messagingSenderId: "91832592128",
+    appId: "1:91832592128:web:01497ac2af82d6081a75e5"
+  };
+firebase.initializeApp(firebaseConfig);
+const db = firebase.firestore();
+</script>
+<script src="libraryAuth.js"></script>
 </body>
