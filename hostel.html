@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+  <style>
+	.navbar {
+  overflow: hidden;
+  background-color: #11C15A;
+}
+
+.navbar a {
+  float:right;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.navbar a:hover{
+	background-color:#b0dbb3;
+}
+.btn{
+	float:right;
+	background-color:#11C15A;
+	border: none;
+	color: white;
+	padding: 14px 16px;
+	text-align: center;
+	font-size: 16px;
+	cursor: pointer;
+	
+}
+.btn:hover{
+	background-color:#b0dbb3;
+} 
+  
+.navbar input[type=text] {
+  float: right;
+  padding: 6px;
+  margin-top: 6px;
+  margin-right: 16px;
+  border: 2px solid #ddd;
+  font-size: 16px;
+}
+  
+  
+  </style>
+</head>
+
+<body>
+
+<div class="navbar">
+	
+  <a href="file:///D:/web/login.html">lOGOUT</a>
+  <a href="#news">ABS LIST</a>
+  
+  <button class="btn" >
+	<i class="fa fa-bell" aria-hidden="true"></i></button>
+		
+   <input type="text" placeholder="Search.." id="myInput" onkeyup="myFunction()">
+</div>
+<img src="kiit_logo.jpg" alt="kiit logo">
+
+<div class="table" id="myTable">
+<table border="1" align="center" width="70%" cellpadding="5" cellspacing="3">
+<thead>
+ <tr><th colspan="5">KIIT UNIVERSITY</th><tr>
+</thead> 
+ <tr>
+	<th>NAME</th>
+	<th>ROLL</th>
+	<th>PHONE NO.</th>
+	<th>LIBRARY</th>
+	<th>ATENDENCE</th>
+	
+ 
+ </tr>
+ <tr>
+	<td>Pradhumn</td>
+	<td>1705515</td>
+	<td>999999999</td>
+	<td>Central Library</td>
+	<td><select id="select1">
+      <option value="$">--Please Select--</option>
+      <option value="val1">returned</option>
+      <option value="val2">not returned</option>
+</select></td>	
+ </tr>
+ 
+  <tr>
+	<td>Aditi</td>
+	<td>1705478</td>
+	<td>888888888</td>
+	<td>Central Library</td>
+	<td><select id="select1">
+      <option value="$">--Please Select--</option>
+      <option value="val1">returned</option>
+      <option value="val2">not returned</option>
+</select></td>	
+ </tr>
+ 
+  <tr>
+	<td>Roli</td>
+	<td>1705530</td>
+	<td>777777777</td>
+	<td>Central Library</td>
+	<td><select id="select1">
+      <option value="$">--Please Select--</option>
+      <option value="val1">returned</option>
+      <option value="val2">not returned</option>
+</select></td>	
+ </tr
+
+</table>
+</div>
+
+<script>
+function myFunction() {
+  var input, filter, table, tr, td, i, txtValue;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+  for (i = 0; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[1];
+    if (td) {
+      txtValue = td.textContent || td.innerText;
+      if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    }       
+  }
+}
+</script>
+
+
+
+</body>

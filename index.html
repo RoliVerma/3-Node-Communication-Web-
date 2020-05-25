@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+ <style> 
+    *{
+	margin: 0px;
+	padding: 0px;
+}
+  body{
+	margin: 0px;
+	padding: 0px;
+	font-family: sans-serif;
+}
+	a{color:white;}
+
+.front {
+	max-width:100%;
+	height:auto;
+}
+
+ 	.navbar {
+  overflow: hidden;
+  background-color: #11C15A;
+}
+
+.navbar a {
+  float:right;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.navbar a:hover{
+	background-color:#b0dbb3;
+}
+.btn{
+	float:right;
+	background-color:#11C15A;
+	border: none;
+	color: white;
+	padding: 14px 16px;
+	text-align: center;
+	font-size: 16px;
+	cursor: pointer;
+	
+}
+.btn:hover{
+	background-color:#b0dbb3;
+} 
+.slide_show {
+  max-width: 1380px;
+  
+  position: relative;
+  margin: auto;
+}
+
+</style>  
+</head>
+<body>
+
+<div class="navbar" >
+	
+	<a href="file:///D:/web/login.html" >Login</a>
+	<a href="file:///D:/web/about_us.html" target="_blank">About Us</a>
+	<a href="file:///D:/web/guideline.html" target="_blank">Guideline</a>
+	<button class="btn" onclick="window.open('https://www.facebook.com/KIITUniversity','_blank')" >
+	<i class="fa fa-facebook" aria-hidden="true"></i></button>
+	
+	<button class="btn" onclick=" window.open('https://www.instagram.com/KIITUniversity/','_blank')">
+	<i class="fa fa-instagram" aria-hidden="true"></i></button>
+	
+	<button class="btn" onclick="window.open('https://twitter.com/KIITUniversity','_blank')">
+	<i class="fa fa-twitter" aria-hidden="true"></i></button>
+	
+	<button class="btn" onclick="window.open('https://www.youtube.com/channel/UC2x7DxsTyZj7XBa3hlLVPCQ','_blank')">
+	<i class="fa fa-youtube-play" aria-hidden="true"></i></button>
+	
+</div>
+<img src="kiit_logo.jpg" alt="kiit logo">
+
+<div class="slide_show">
+	<div class="myslide">
+	<img src="img1.png" style="width:100%">
+	</div>
+	
+	<div class="myslide">
+	<img src="img2.png" style="width:100%">
+	</div>
+	
+	<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+	<a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+</body>
+</html>
