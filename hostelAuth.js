@@ -10,12 +10,12 @@ var unsubscribe=firebase.auth().onAuthStateChanged(function(user) {
 
   } else {
     // No user is signed in.
-    window.location.replace('http://localhost/RoliLogin/firebaseWebLogin/login.html');
+    window.location.replace('login.html');
   }
 });
 function logout(){
   firebase.auth().signOut();
-  window.location.replace('http://localhost/RoliLogin/firebaseWebLogin/login.html');
+  window.location.replace('login.html');
 
 }
 
