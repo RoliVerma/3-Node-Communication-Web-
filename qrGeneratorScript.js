@@ -10,4 +10,27 @@ function generateQr(){
   let url = `${baseUrl}?data=${qrString}&size=${size}`;
 
   qrcode.src = url;
+
+  let db = firebase.firestore();
+  let data = {
+  qr: qrString
+  };
+//CROPPING OUT THE USERNAME FOR DOCUMENT NAME
+
+firebase.auth().onAuthStateChanged(function(user) {
+  if (user) {
+            // User is signed in.
+            var user = firebase.auth().currentUser;
+            if(user != null){
+              let docName = user.email.slice(0,5);
+              let setDoc = db.collection('QrCodes').doc(docName).set(data);
+            }else{
+              window.location.href ="library.html";
+            }
+    }
+    else
+    {
+      console.log(user);
+    }
+});
 }

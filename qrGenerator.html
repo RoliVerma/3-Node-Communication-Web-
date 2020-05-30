@@ -3,7 +3,6 @@
   <head>
     <meta charset="utf-8">
     <title>QR Code Generator</title>
-    <script src="qrGeneratorScript.js" defer></script>
   </head>
   <body>
     <div class="qrbox">
@@ -11,5 +10,25 @@
       <button type="button" name="button">GENERATE QR CODE</button>
     </div>
 
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyB8UPc_EUxpwB1BSIQO1ejIWv6GKoIqtec",
+        authDomain: "librarypass-540bb.firebaseapp.com",
+        databaseURL: "https://librarypass-540bb.firebaseio.com",
+        projectId: "librarypass-540bb",
+        storageBucket: "librarypass-540bb.appspot.com",
+        messagingSenderId: "91832592128",
+        appId: "1:91832592128:web:01497ac2af82d6081a75e5",
+        measurementId: "G-FQ15C6E046"
+      };
+      firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="qrGeneratorScript.js" ></script>
   </body>
 </html>
