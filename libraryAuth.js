@@ -29,7 +29,7 @@ let CreateTable = function (){
        // CREATE DYNAMIC TABLE.
        var table = document.createElement('table');
 
-       // SET THE TABLE ID.
+       // TODO SET THE TABLE ID.
        // WE WOULD NEED THE ID TO TRAVERSE AND EXTRACT DATA FROM THE TABLE.
        table.setAttribute('id', 'empTable');
        table.setAttribute('border','1');

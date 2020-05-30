@@ -44,7 +44,7 @@ function CreateTable() {
        // CREATE DYNAMIC TABLE.
        var table = document.createElement('table');
 
-       // SET THE TABLE ID.
+       // TODO SET THE TABLE ID.
        // WE WOULD NEED THE ID TO TRAVERSE AND EXTRACT DATA FROM THE TABLE.
        table.setAttribute('id', 'empTable');
        table.setAttribute('border','1');
@@ -55,7 +55,13 @@ function CreateTable() {
 
        var arrHead = new Array();
        arrHead = ['S.No','Name', 'Roll Number', 'Year' , 'Stream' , 'Branch' ,'Contact' , 'Hostel' ,'Verification'];
+       var tr = table.insertRow(-1);
 
+       for (var h = 0; h < arrHead.length; h++) {
+           var th = document.createElement('th');              // TABLE HEADER.
+           th.innerHTML = arrHead[h];
+           tr.appendChild(th);
+       }
        var today = new Date();
        var date = today.getDate();
        let db = firebase.firestore();
@@ -79,13 +85,7 @@ function CreateTable() {
            console.log('Error getting documents', err);
          });
 
-       var tr = table.insertRow(-1);
 
-       for (var h = 0; h < arrHead.length; h++) {
-           var th = document.createElement('th');              // TABLE HEADER.
-           th.innerHTML = arrHead[h];
-           tr.appendChild(th);
-       }
 
        for (var c = 0; c <= arrValue.length - 1; c++) {
            tr = table.insertRow(-1);
