@@ -5,6 +5,7 @@ var unsubscribe=firebase.auth().onAuthStateChanged(function(user) {
 
     if(user != null){
         var email_id = user.email;
+        CreateTable();
       //document.getElementById("user_para").innerHTML = "Welcome User : " + email_id;
     }
 
@@ -37,3 +38,63 @@ function myFunction() {
     }
   }
 }
+
+function CreateTable() {
+
+       // CREATE DYNAMIC TABLE.
+       var table = document.createElement('table');
+
+       // SET THE TABLE ID.
+       // WE WOULD NEED THE ID TO TRAVERSE AND EXTRACT DATA FROM THE TABLE.
+       table.setAttribute('id', 'empTable');
+       table.setAttribute('border','1');
+       table.setAttribute('align','center');
+       table.setAttribute('width','70%');
+       table.setAttribute('cellpadding','5');
+       table.setAttribute('cellspacing','3');
+
+       var arrHead = new Array();
+       arrHead = ['S.No','Name', 'Roll Number', 'Year' , 'Stream' , 'Branch' ,'Contact' , 'Hostel' ,'Verification'];
+
+       var today = new Date();
+       var date = today.getDate();
+       let db = firebase.firestore();
+
+      let i = 0;
+       var arrValue = new Array();
+       let studRef = db.collection('Library');
+       let allStud = studRef.get()
+         .then(snapshot => {
+           snapshot.forEach(doc => {
+             console.log(doc.id, '=>', doc.data());
+
+             if( date == doc.id.slice(0,2)){
+               console.log(doc.id.slice(0,2));
+               i=i+1;
+               arrValue.push(['1', 'Green Field', 'Accountant']);
+             }
+           });
+         })
+         .catch(err => {
+           console.log('Error getting documents', err);
+         });
+
+       var tr = table.insertRow(-1);
+
+       for (var h = 0; h < arrHead.length; h++) {
+           var th = document.createElement('th');              // TABLE HEADER.
+           th.innerHTML = arrHead[h];
+           tr.appendChild(th);
+       }
+
+       for (var c = 0; c <= arrValue.length - 1; c++) {
+           tr = table.insertRow(-1);
+
+           for (var j = 0; j < arrHead.length; j++) {
+               var td = document.createElement('td');          // TABLE DEFINITION.
+               td = tr.insertCell(-1);
+               td.innerHTML = arrValue[c][j];                  // ADD VALUES TO EACH CELL.
+           }
+       }
+       document.body.appendChild(table);
+     }

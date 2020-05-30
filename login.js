@@ -31,7 +31,6 @@ function initializePage () {
 document.onload = initializePage();
 
 function login(){
-
   var userEmail = document.getElementById("email_id").value;
   var userPass = document.getElementById("psw_id").value;
 
@@ -39,9 +38,7 @@ function login(){
     // Handle Errors here.
     var errorCode = error.code;
     var errorMessage = error.message;
-
     window.alert("Error : " + errorMessage);
-
     // ...
   });
 

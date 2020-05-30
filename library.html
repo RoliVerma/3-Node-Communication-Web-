@@ -51,8 +51,7 @@
 <body>
 
 <div class="navbar">
-
-  <a href="file:///D:/web/login.html">lOGOUT</a>
+  <a href="javascript:logout();">lOGOUT</a>
   <a href="#news">ABS LIST</a>
 
   <button class="btn" >
@@ -62,96 +61,13 @@
 </div>
 <img src="kiit_logo.jpg" alt="kiit logo">
 
-<div class="table" id="myTable">
-<table border="1" align="center" width="70%" cellpadding="5" cellspacing="3">
-<thead>
- <tr><th colspan="6">KIIT UNIVERSITY</th><tr>
-</thead>
- <tr>
-	<th>NAME</th>
-	<th>ROLL</th>
-	<th>HOSTEL</th>
-	<th>THINGS</th>
-	<th>ATENDENCE</th>
-	<th>LEFT</th>
-
-
- </tr>
- <tr>
-	<td>Pradhumn</td>
-	<td>1705515</td>
-	<td>KP 10 A</td>
-	<td>Laptop</td>
-	<td><select id="select1">
-      <option value="$">--Please Select--</option>
-      <option value="val1">Present</option>
-      <option value="val2">Absent</option>
-      <option value="val3">Canceled</option>
-</select></td>
-	<td><input type="checkbox" />    &nbsp;   </td>
- </tr>
-
-  <tr>
-	<td>Aditi</td>
-	<td>1705478</td>
-	<td>QC 4 A</td>
-	<td>Laptop</td>
-	<td><select id="select1">
-      <option value="$">--Please Select--</option>
-      <option value="val1">Present</option>
-      <option value="val2">Absent</option>
-      <option value="val3">Canceled</option>
-</select></td>
-	<td><input type="checkbox" />    &nbsp;   </td>
- </tr>
-
-  <tr>
-	<td>Roli</td>
-	<td>1705530</td>
-	<td>QC 4 A</td>
-	<td>Laptop</td>
-	<td><select id="select1">
-      <option value="$">--Please Select--</option>
-      <option value="val1">Present</option>
-      <option value="val2">Absent</option>
-      <option value="val3">Canceled</option>
-</select></td>
-	<td><input type="checkbox" />    </td>
- </tr
-
-
-
-
-
-</table>
-</div>
-
-<script>
-function myFunction() {
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[1];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }
-  }
-}
-</script>
-
 <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-analytics.js"></script>
+
 <script>
-  // Initialize Firebase
+  // Your web app's Firebase configuration
   var firebaseConfig = {
     apiKey: "AIzaSyB8UPc_EUxpwB1BSIQO1ejIWv6GKoIqtec",
     authDomain: "librarypass-540bb.firebaseapp.com",
@@ -159,10 +75,12 @@ function myFunction() {
     projectId: "librarypass-540bb",
     storageBucket: "librarypass-540bb.appspot.com",
     messagingSenderId: "91832592128",
-    appId: "1:91832592128:web:01497ac2af82d6081a75e5"
+    appId: "1:91832592128:web:01497ac2af82d6081a75e5",
+    measurementId: "G-FQ15C6E046"
   };
-firebase.initializeApp(firebaseConfig);
-const db = firebase.firestore();
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
 </script>
 <script src="libraryAuth.js"></script>
 </body>

@@ -48,7 +48,7 @@
   </style>
 </head>
 
-<body>
+<body id="body">
 
 <div class="navbar">
 
@@ -62,63 +62,13 @@
 </div>
 <img src="kiit_logo.jpg" alt="kiit logo">
 
-<div class="table" id="myTable">
-<table border="1" align="center" width="70%" cellpadding="5" cellspacing="3">
-<thead>
- <tr><th colspan="5">KIIT UNIVERSITY</th><tr>
-</thead>
- <tr>
-	<th>NAME</th>
-	<th>ROLL</th>
-	<th>PHONE NO.</th>
-	<th>LIBRARY</th>
-	<th>ATENDENCE</th>
-
-
- </tr>
- <tr>
-	<td>Pradhumn</td>
-	<td>1705515</td>
-	<td>999999999</td>
-	<td>Central Library</td>
-	<td><select id="select1">
-      <option value="$">--Please Select--</option>
-      <option value="val1">returned</option>
-      <option value="val2">not returned</option>
-</select></td>
- </tr>
-
-  <tr>
-	<td>Aditi</td>
-	<td>1705478</td>
-	<td>888888888</td>
-	<td>Central Library</td>
-	<td><select id="select1">
-      <option value="$">--Please Select--</option>
-      <option value="val1">returned</option>
-      <option value="val2">not returned</option>
-</select></td>
- </tr>
-
-  <tr>
-	<td>Roli</td>
-	<td>1705530</td>
-	<td>777777777</td>
-	<td>Central Library</td>
-	<td><select id="select1">
-      <option value="$">--Please Select--</option>
-      <option value="val1">returned</option>
-      <option value="val2">not returned</option>
-</select></td>
- </tr
-
-</table>
-</div>
 <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-app.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
 <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-analytics.js"></script>
+
 <script>
-  // Initialize Firebase
+  // Your web app's Firebase configuration
   var firebaseConfig = {
     apiKey: "AIzaSyB8UPc_EUxpwB1BSIQO1ejIWv6GKoIqtec",
     authDomain: "librarypass-540bb.firebaseapp.com",
@@ -126,9 +76,12 @@
     projectId: "librarypass-540bb",
     storageBucket: "librarypass-540bb.appspot.com",
     messagingSenderId: "91832592128",
-    appId: "1:91832592128:web:01497ac2af82d6081a75e5"
+    appId: "1:91832592128:web:01497ac2af82d6081a75e5",
+    measurementId: "G-FQ15C6E046"
   };
-firebase.initializeApp(firebaseConfig);
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
 </script>
   <script src="hostelAuth.js"></script>
 </body>
