@@ -18,6 +18,7 @@ user-select:none;
 position:absolute;
 top:50%;
 left:50%;
+margin-top:40px;
 transform:translate(-50%,-50%);
 }
 .click-me
@@ -34,19 +35,37 @@ line-height:50px;
 border-radius:3px;
 cursor:pointer;
 transition:.5;
-margin-left:150px;
+margin-left:120px;
 margin-top:20px;
 }
 .click-me:hover
 {
 background:#219150;
 }
-	
+.navbar {
+ 
+  text-align: center;
+  background-color: #27ae60;
+  overflow:hidden;
+}
+.header h1
+{
+text-align:center;
+text-size:10px;
+color:white;
+}	
+.header{
+  padding: 1px;
+  background: #11C15A;
+  }
 	</style>
   </head>
   <body>
+  <div class="header">
+  <h1>GENERATE QR CODE</h1>
+</div>
     <div class="qrbox">
-      <img src="./qrGeneratorImg.png" alt="qr-code" width="450px" height="450px">
+      <img src="./qrGeneratorImg.png" alt="qr-code" width="400px" height="400px">
       <button type="button" class="click-me" name="button">GENERATE QR CODE</button>
     </div>
 
